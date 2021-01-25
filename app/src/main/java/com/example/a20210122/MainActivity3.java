@@ -36,24 +36,25 @@ public class MainActivity3 extends AppCompatActivity {
 
     public void shpae(View view) {
         Random ram = new Random();
-        int num1 = ram.nextInt(img.length);
-        int num2 = ram.nextInt(img.length);
+        int num1 = ram.nextInt(img.length);//첫번째 주사위 결정
+        int num2 = ram.nextInt(img.length);//두번째 주사위 결정
 
         img_view1.setImageResource(img[num1]);
         img_view2.setImageResource(img[num2]);
 
         if (num1 < num2) {
             j++;
-            rightResult.setText(j+"");
-
-        } else if (num1>num2){
+            rightResult.setText(j + "");
+            Log.v("myValue1", "오른쪽");
+        } else if (num1 > num2) {
             i++;
 
-            leftResult.setText(i+"");
+            leftResult.setText(i + "");
+            Log.v("myValue2", "왼쪽");
 
-        }
-        else{
+        } else {
             Toast.makeText(this, "비김", Toast.LENGTH_SHORT).show();
+            Log.v("myValue3", "비김");
         }
 
 
